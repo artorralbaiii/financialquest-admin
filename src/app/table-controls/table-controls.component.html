@@ -1,0 +1,7 @@
+<div class="table-controls">
+    <button *ngIf="!editMode" class="btn btn-primary mx-1" (click)="toggleEditMode();"
+        routerLink="{{appNewRoute}}">New</button>
+    <button *ngIf="editMode" class="btn btn-success mx-1">Save</button>
+    <button *ngIf="editMode" class="btn btn-warning mx-1" (click)="toggleEditMode();"
+        routerLink="{{appCancelRoute}}">Cancel</button>
+</div>

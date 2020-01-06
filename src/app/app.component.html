@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Financial Quest - Administration</a>
+</nav>
+
+<div class="container-fluid" id="main">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="nav flex-column nav-pills border p-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link" data-toggle="pill" routerLink="/customer" routerLinkActive="active">Customers</a>
+                <a class="nav-link" data-toggle="pill" routerLink="/quest" routerLinkActive="active">Quests</a>
+                <a class="nav-link" data-toggle="pill" routerLink="/reward" routerLinkActive="active">Rewards</a>
+                <a class="nav-link" data-toggle="pill" routerLink="/level" routerLinkActive="active">Levels</a>
+                <a class="nav-link" data-toggle="pill" routerLink="/profile" routerLinkActive="active">Profiles</a>
+                <a class="nav-link" data-toggle="pill" routerLink="/config" routerLinkActive="active">System Config</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
