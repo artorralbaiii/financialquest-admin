@@ -1,0 +1,8 @@
+{
+    "/dev/data/*": {
+        "target": "https://6ly4xwm888.execute-api.ap-southeast-1.amazonaws.com",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

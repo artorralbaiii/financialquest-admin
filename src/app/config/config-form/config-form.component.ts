@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-config-form',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigFormComponent implements OnInit {
 
-  constructor() { }
+  formData = {};
+
+  constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    this.dataservice.save('config', form)
+      .subscribe(resp => {
+        this.router.navigate(['/config']);
+      });
   }
 
 }

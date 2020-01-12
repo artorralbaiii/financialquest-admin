@@ -1,47 +1,36 @@
-<h4 class="table-title">Quests</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <h4 class="table-title">Quests</h4>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="#" class="btn btn-primary align-right" routerLink="/quest/new">Create</a>
+        </div>
+    </div>
+</div>
 
 <hr>
-<!-- 
-<div class="table-controls">
-    <a *ngIf="!editMode" href="#" class="btn btn-primary mx-1" routerLink="/quest/new"
-        (click)="toggleEditMode();">New</a>
-    <button *ngIf="editMode" class="btn btn-success mx-1">Save</button>
-    <button *ngIf="editMode" class="btn btn-warning mx-1" (click)="toggleEditMode();" routerLink="/quest">Cancel</button>
-</div>
- -->
-
-<app-table-controls appNewRoute="/quest/new" appCancelRoute="/quest"></app-table-controls>
-
-
-<router-outlet></router-outlet>
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Quest Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Required Level</th>
+                <th scope="col">Repeat Count</th>
+                <th scope="col">Pts Mulitplier</th>
+                <th scope="col">Goal</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let quest of quests">
+                <td>{{quest.name}}</td>
+                <td>{{quest.description}}</td>
+                <td>{{quest.requiredLevel}}</td>
+                <td>{{quest.repeatCount}}</td>
+                <td>{{quest.pointsMultiplier}}</td>
+                <td>{{quest.goal}}</td>
             </tr>
         </tbody>
     </table>

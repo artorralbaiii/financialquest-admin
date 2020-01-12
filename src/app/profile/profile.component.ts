@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Profile } from '../models/profile';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  profiles: Profile[] = [];
+
+  constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.profiles = this._route.snapshot.data.profiles;
   }
 
 }

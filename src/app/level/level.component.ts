@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Level } from '../models/level';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-level',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LevelComponent implements OnInit {
 
-  constructor() { }
+  levels: Level[] = [];
+
+  constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.levels = this._route.snapshot.data.levels;
   }
 
 }

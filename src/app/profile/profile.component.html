@@ -1,38 +1,32 @@
-<h4 class="table-title">Profiles</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <h4 class="table-title">Profiles</h4>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="#" class="btn btn-primary align-right" routerLink="/profile/new">Create</a>
+        </div>
+    </div>
+</div>
 
 <hr>
-
-<app-table-controls appNewRoute="/profile/new" appCancelRoute="/profile"></app-table-controls>
-
-<router-outlet></router-outlet>
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Doc Id</th>
+                <th scope="col">Reference Number</th>
+                <th scope="col">Profile Name</th>
+                <th scope="col">Description</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let profile of profiles">
+                <td>{{profile._id}}</td>
+                <td>{{profile.profileId}}</td>
+                <td>{{profile.name}}</td>
+                <td>{{profile.description}}</td>
             </tr>
         </tbody>
     </table>

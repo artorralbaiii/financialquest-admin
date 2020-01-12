@@ -1,38 +1,30 @@
-<h4 class="table-title">Levels</h4>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-left">
+            <h4 class="table-title">Levels</h4>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="#" class="btn btn-primary align-right" routerLink="/level/new">Create</a>
+        </div>
+    </div>
+</div>
 
 <hr>
-
-<app-table-controls appNewRoute="/level/new" appCancelRoute="/level"></app-table-controls>
-
-<router-outlet></router-outlet>
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Level Num</th>
+                <th scope="col">Name</th>
+                <th scope="col">Points Required</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let level of levels">
+                <td>{{level.name}}</td>
+                <td>{{level.levelNumn}}</td>
+                <td>{{level.pointsRequired}}</td>
             </tr>
         </tbody>
     </table>

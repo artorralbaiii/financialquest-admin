@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Config } from '../models/config';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-config',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigComponent implements OnInit {
 
-  constructor() { }
+  configs: Config[] = [];
+
+  constructor(private _route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.configs = this._route.snapshot.data.configs;
   }
 
 }

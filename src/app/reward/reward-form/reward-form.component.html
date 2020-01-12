@@ -1,28 +1,33 @@
-<form class="container">
+<form class="container" (ngSubmit)="onSubmit(formData)" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="rewardName">Reward Name</label>
-                <input type="text" class="form-control" id="rewardName" placeholder="Enter reward name">
+                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="rewardName" placeholder="Enter reward name">
             </div>
             <div class="form-group">
                 <label for="rewardDesc">Description</label>
-                <textarea class="form-control" id="rewardDesc" rows="8" placeholder="Enter reward description"></textarea>
+                <textarea [(ngModel)]="formData.description" [ngModelOptions]="{standalone: true}" class="form-control" id="rewardDesc" rows="8" placeholder="Enter reward description"></textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
-                <label for="rewardType">Profile Type</label>
-                <input type="text" class="form-control" id="rewardType" placeholder="Enter reward type">
+                <label for="rewardType">Reward Type</label>
+                <input [(ngModel)]="formData.type" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="rewardType" placeholder="Enter reward type">
             </div>
             <div class="form-group">
                 <label for="requiredLvl">Required Level</label>
-                <input type="number" class="form-control" id="requiredLvl" placeholder="Enter required level">
+                <input [(ngModel)]="formData.level" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="requiredLvl" placeholder="Enter required level">
             </div>
             <div class="form-group">
                 <label for="profileType">Profile Type</label>
-                <input type="text" class="form-control" id="profileType" placeholder="Enter profile type">
+                <input [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="profileType" placeholder="Enter profile type">
             </div>
         </div>
     </div>
-</form>
+
+    <div class="table-controls">
+        <button type="submit" class="btn btn-success mx-1">Save</button>
+        <a class="btn btn-warning mx-1" routerLink="/reward">Cancel</a>
+    </div>
+</form> 

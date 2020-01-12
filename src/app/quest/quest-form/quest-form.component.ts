@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../data.service'
 
 @Component({
   selector: 'app-quest-form',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestFormComponent implements OnInit {
 
-  constructor() { }
+  formData = {};
+
+  constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    this.dataservice.save('quest', form)
+      .subscribe(resp => {
+        this.router.navigate(['/quest']);
+      });
   }
 
 }

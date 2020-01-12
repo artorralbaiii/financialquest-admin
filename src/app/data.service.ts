@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Customer } from './models/customer'
 import { Level } from './models/level';
 import { Quest } from './models/quest';
@@ -9,22 +11,17 @@ import { Reward } from './models/reward';
 })
 export class DataService {
 
-  constructor() { }
+  // apiHostName: string = 'https://6ly4xwm888.execute-api.ap-southeast-1.amazonaws.com/dev/data/';
+  apiHostName: string = '/dev/data/';
 
-  getCustomers(): Customer[] {
-    return [];
+  constructor(private http: HttpClient) { }
+
+  public save(model: string, formData: any) {
+    return this.http.post<Quest>(this.apiHostName + model, formData);
   }
 
-  getLevels(): Level[] {
-    return [];
-  }
-
-  getQuests(): Quest[] {
-    return [];
-  }
-
-  getRewards(): Reward[] {
-    return [];
+  public get(model: string, id: string) {
+    return this.http.get<Quest>(this.apiHostName + model);
   }
 
 }

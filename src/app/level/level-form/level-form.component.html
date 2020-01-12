@@ -1,20 +1,25 @@
-<form class="container">
+<form class="container" (ngSubmit)="onSubmit(formData)" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="lvlName">Level Name</label>
-                <input type="text" class="form-control" id="lvlName" placeholder="Enter level name">
+                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="lvlName" placeholder="Enter level name">
             </div>
             <div class="form-group">
                 <label for="lvlNum">Level Number</label>
-                <input type="number" class="form-control" id="lvlNum" placeholder="Enter level number">
+                <input [(ngModel)]="formData.levelNum" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="lvlNum" placeholder="Enter level number">
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="reqPoints">Required Points</label>
-                <input type="number" class="form-control" id="reqPoints" placeholder="Enter required points">
+                <input [(ngModel)]="formData.pointsRequired" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="reqPoints" placeholder="Enter required points">
             </div>
         </div>
+    </div>
+
+    <div class="table-controls">
+        <button type="submit" class="btn btn-success mx-1">Save</button>
+        <a class="btn btn-warning mx-1" routerLink="/level">Cacnel</a>
     </div>
 </form>

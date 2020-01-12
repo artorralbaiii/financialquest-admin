@@ -1,32 +1,41 @@
-<form class="container">
+<form class="container" (ngSubmit)="onSubmit(formData)" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label for="questName">Quest Name</label>
-                <input type="text" class="form-control" id="questName" placeholder="Enter quest name">
+                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="questName" placeholder="Enter quest name"> 
             </div>
             <div class="form-group">
                 <label for="questDesc">Description</label>
-                <textarea class="form-control" id="questDesc" rows="8" placeholder="Enter quest description"></textarea>
+                <textarea [(ngModel)]="formData.description" [ngModelOptions]="{standalone: true}" class="form-control" id="questDesc" rows="8" placeholder="Enter quest description"></textarea>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="pointsMult">Multiplier</label>
-                <input type="number" class="form-control" id="pointsMult" placeholder="Enter multiplier">
+                <input [(ngModel)]="formData.pointsMultiplier" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="pointsMult" placeholder="Enter multiplier">
             </div>
             <div class="form-group">
                 <label for="repeatCount">Repeat Count</label>
-                <input type="number" class="form-control" id="repeatCount" placeholder="Enter repeat count">
+                <input [(ngModel)]="formData.repeatCount" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="repeatCount" placeholder="Enter repeat count">
             </div>
             <div class="form-group">
                 <label for="requiredLvl">Required Level</label>
-                <input type="number" class="form-control" id="requiredLvl" placeholder="Enter required level">
+                <input [(ngModel)]="formData.requiredLevel" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="requiredLvl" placeholder="Enter required level">
             </div>
             <div class="form-group">
                 <label for="profileType">Profile Type</label>
-                <input type="text" class="form-control" id="profileType" placeholder="Enter profile type">
+                <input [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="profileType" placeholder="Enter profile type">
+            </div>
+            <div class="form-group">
+                <label for="goal">Goal</label>
+                <input [(ngModel)]="formData.goal" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="goal" placeholder="Enter goal">
             </div>
         </div>
+    </div>
+
+    <div class="table-controls">
+        <button type="submit" class="btn btn-success mx-1">Save</button>
+        <a class="btn btn-warning mx-1" routerLink="/quest">Cacnel</a>
     </div>
 </form>

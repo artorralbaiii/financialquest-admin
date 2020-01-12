@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-level-form',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LevelFormComponent implements OnInit {
 
-  constructor() { }
+formData = {};
+
+  constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    this.dataservice.save('level', form)
+      .subscribe(resp => {
+        this.router.navigate(['/level']);
+      });
   }
 
 }

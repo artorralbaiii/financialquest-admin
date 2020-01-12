@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Profile } from 'src/app/models/profile';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'app-profile-form',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileFormComponent implements OnInit {
 
-  constructor() { }
+  formData = {};
+
+  constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form) {
+    this.dataservice.save('profile', form)
+      .subscribe(resp => {
+        this.router.navigate(['/profile']);
+      });
   }
 
 }
