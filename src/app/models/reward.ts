@@ -1,7 +1,7 @@
-export interface Reward {
+export interface IReward {
     name: String;
     description: String;
     type: String;
     level: Number;
-    profile: String;
+    profile: any;
 }

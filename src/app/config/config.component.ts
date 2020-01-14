@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Config } from '../models/config';
+import { IConfig } from '../models/config';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ConfigComponent implements OnInit {
 
-  configs: Config[] = [];
+  configs: IConfig[] = [];
 
   constructor(private _route: ActivatedRoute) { }
 

@@ -1,4 +1,4 @@
-export interface Level {
+export interface ILevel {
     name: String;
     levelNum: Number;
     pointsRequired: Number;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Reward } from '../models/reward';
+import { IReward } from '../models/reward';
 
 @Component({
   selector: 'app-reward',
@@ -9,7 +9,7 @@ import { Reward } from '../models/reward';
 })
 export class RewardComponent implements OnInit {
 
-  rewards: Reward[] = [];
+  rewards: IReward[] = [];
 
   constructor(private _route: ActivatedRoute) { }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Level } from '../models/level';
+import { ILevel } from '../models/level';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LevelComponent implements OnInit {
 
-  levels: Level[] = [];
+  levels: ILevel[] = [];
 
   constructor(private _route: ActivatedRoute) { }
 

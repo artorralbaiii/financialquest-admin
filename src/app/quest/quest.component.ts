@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Quest } from '../models/quest';
+import { IQuest } from '../models/quest';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestComponent implements OnInit {
 
   editMode: boolean;
-  quests: Quest[] = [];
+  quests: IQuest[] = [];
 
   constructor(private _route: ActivatedRoute) { }
 

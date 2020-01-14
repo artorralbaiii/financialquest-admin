@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Profile } from '../models/profile';
+import { IProfile } from '../models/profile';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +9,7 @@ import { Profile } from '../models/profile';
 })
 export class ProfileComponent implements OnInit {
 
-  profiles: Profile[] = [];
+  profiles: IProfile[];
 
   constructor(private _route: ActivatedRoute) { }
 
@@ -18,3 +18,6 @@ export class ProfileComponent implements OnInit {
   }
 
 }
+
+
+

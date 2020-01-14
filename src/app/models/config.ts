@@ -1,4 +1,4 @@
-export interface Config {
+export interface IConfig {
     key: String;
     value: any;
 }

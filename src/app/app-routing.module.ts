@@ -23,8 +23,16 @@ const routes: Routes = [
   { path: 'customer', component: CustomerComponent },
   { path: 'level/new', component: LevelFormComponent },
   { path: 'profile/new', component: ProfileFormComponent },
-  { path: 'quest/new', component: QuestFormComponent },
-  { path: 'reward/new', component: RewardFormComponent },
+  {
+    path: 'quest/new', component: QuestFormComponent, resolve: {
+      profiles: ProfileResolverService
+    }
+  },
+  {
+    path: 'reward/new', component: RewardFormComponent, resolve: {
+      profiles: ProfileResolverService
+    }
+  },
   {
     path: 'quest', component: QuestComponent, resolve: {
       quest: QuestResolverService

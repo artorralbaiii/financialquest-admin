@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Profile } from 'src/app/models/profile';
+import { Router, ActivatedRoute } from '@angular/router';
+import { IProfile } from 'src/app/models/profile';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -10,18 +10,24 @@ import { DataService } from 'src/app/data.service';
 })
 export class ProfileFormComponent implements OnInit {
 
-  formData = {};
+  formData = new Profile();
+  profiles: IProfile[] = [];
 
   constructor(private dataservice: DataService, private router: Router) { }
 
   ngOnInit() {
   }
 
-  onSubmit(form) {
+  onSubmit(form: IProfile) {
     this.dataservice.save('profile', form)
       .subscribe(resp => {
         this.router.navigate(['/profile']);
       });
   }
 
+}
+
+class Profile implements IProfile {
+  profileId: Number;  name: String;
+  description: String;
 }
