@@ -16,16 +16,20 @@ import { ProfileResolverService } from './profile/profile-resolver.service';
 import { LevelResolverService } from './level/level-resolver.service';
 import { RewardResolverService } from './reward/reward-resolver.service';
 import { ConfigResolverService } from './config/config-resolver.service';
+import { CustomerResolverService } from './customer/customer-resolver.service';
 
 
 const routes: Routes = [
   { path: 'config/new', component: ConfigFormComponent },
-  { path: 'customer', component: CustomerComponent },
   { path: 'level/new', component: LevelFormComponent },
   { path: 'profile/new', component: ProfileFormComponent },
+  { path: 'customer', component: CustomerComponent, resolve: {
+      customers: CustomerResolverService
+  } },
   {
     path: 'quest/new', component: QuestFormComponent, resolve: {
-      profiles: ProfileResolverService
+      profiles: ProfileResolverService,
+      rewards: RewardResolverService
     }
   },
   {

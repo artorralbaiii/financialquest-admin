@@ -5,5 +5,6 @@ export interface IQuest {
     repeatCount: Number;
     requiredLevel: Number;
     profile: any;
+    reward: any;
     goal: Number;
 }

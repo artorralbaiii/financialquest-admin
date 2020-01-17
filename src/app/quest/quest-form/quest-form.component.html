@@ -3,36 +3,52 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label for="questName">Quest Name</label>
-                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="questName" placeholder="Enter quest name"> 
+                <input [(ngModel)]="formData.name" [ngModelOptions]="{standalone: true}" type="text"
+                    class="form-control" id="questName" placeholder="Enter quest name">
             </div>
             <div class="form-group">
                 <label for="questDesc">Description</label>
-                <textarea [(ngModel)]="formData.description" [ngModelOptions]="{standalone: true}" class="form-control" id="questDesc" rows="8" placeholder="Enter quest description"></textarea>
+                <textarea [(ngModel)]="formData.description" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="questDesc" rows="8" placeholder="Enter quest description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="profileType">Reward</label>
+                <!-- <input [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="profileType" placeholder="Enter profile type"> -->
+                <select [(ngModel)]="formData.reward" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="reward" placeholder="Select reward">
+                    <option *ngFor="let reward of rewards" value="{{reward._id}}">{{reward.name}}</option>
+                </select>
             </div>
         </div>
+
         <div class="col-md-6">
             <div class="form-group">
                 <label for="pointsMult">Multiplier</label>
-                <input [(ngModel)]="formData.pointsMultiplier" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="pointsMult" placeholder="Enter multiplier">
+                <input [(ngModel)]="formData.pointsMultiplier" [ngModelOptions]="{standalone: true}" type="number"
+                    class="form-control" id="pointsMult" placeholder="Enter multiplier">
             </div>
             <div class="form-group">
                 <label for="repeatCount">Repeat Count</label>
-                <input [(ngModel)]="formData.repeatCount" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="repeatCount" placeholder="Enter repeat count">
+                <input [(ngModel)]="formData.repeatCount" [ngModelOptions]="{standalone: true}" type="number"
+                    class="form-control" id="repeatCount" placeholder="Enter repeat count">
             </div>
             <div class="form-group">
                 <label for="requiredLvl">Required Level</label>
-                <input [(ngModel)]="formData.requiredLevel" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="requiredLvl" placeholder="Enter required level">
+                <input [(ngModel)]="formData.requiredLevel" [ngModelOptions]="{standalone: true}" type="number"
+                    class="form-control" id="requiredLvl" placeholder="Enter required level">
             </div>
             <div class="form-group">
                 <label for="profileType">Profile Type</label>
                 <!-- <input [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="profileType" placeholder="Enter profile type"> -->
-                <select [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}"  class="form-control" id="profileType" placeholder="Select profile name">
+                <select [(ngModel)]="formData.profile" [ngModelOptions]="{standalone: true}" class="form-control"
+                    id="profileType" placeholder="Select profile name">
                     <option *ngFor="let profile of profiles" value="{{profile._id}}">{{profile.name}}</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="goal">Goal</label>
-                <input [(ngModel)]="formData.goal" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="goal" placeholder="Enter goal">
+                <input [(ngModel)]="formData.goal" [ngModelOptions]="{standalone: true}" type="number"
+                    class="form-control" id="goal" placeholder="Enter goal">
             </div>
         </div>
     </div>

@@ -1,7 +1,12 @@
 export interface ICustomer {
-    firstName: String;
-    lastName: String;
+    name: String;
     quests: any[];
     profiles: any[];
     rewards: any[];
+    nextRewards: any[];
+    level: any;
+    nextLevel: any;
+    experiencePoints: number;
+    pointRate: number;
 }
+ 

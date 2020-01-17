@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { ICustomer } from '../models/customer';
 
 @Component({
   selector: 'app-customer',
@@ -7,10 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-  router: string;
+  customers: ICustomer[] = [];
 
-  constructor(private _router: Router) {
-    this.router = _router.url;
+  constructor(private _route: ActivatedRoute) {
+    this.customers = this._route.snapshot.data.customers;
   }
 
   ngOnInit() {

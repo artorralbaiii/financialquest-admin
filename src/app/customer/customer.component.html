@@ -1,34 +1,24 @@
 <h4 class="table-title">Customer List</h4>
 
-<hr> 
+<hr>
 
 <div class="table-responsive">
     <table class="table table-hover table-striped table-sm">
         <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Name</th>
+                <th scope="col">Profiles</th>
+                <th scope="col">Level</th>
+                <th scope="col">Progress</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.name}}</td>
+                <td><span class="badge badge-pill badge-success"
+                        *ngFor="let profile of customer.profiles">{{profile.name}}</span></td>
+                <td>{{customer.level.levelNum + ' - ' + customer.level.name}}</td>
+                <td>{{customer.experiencePoints + '/' + customer.nextLevel.pointsRequired}}</td>
             </tr>
         </tbody>
     </table>

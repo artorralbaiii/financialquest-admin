@@ -17,6 +17,7 @@ import { TableControlsComponent } from './table-controls/table-controls.componen
 import { LevelFormComponent } from './level/level-form/level-form.component';
 import { ProfileFormComponent } from './profile/profile-form/profile-form.component';
 import { ConfigFormComponent } from './config/config-form/config-form.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ConfigFormComponent } from './config/config-form/config-form.component'
     TableControlsComponent,
     LevelFormComponent,
     ProfileFormComponent,
-    ConfigFormComponent
+    ConfigFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
